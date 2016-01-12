@@ -42,6 +42,6 @@ function shuffleArray(array) {
 }
 
 function buildHandle(adjective, noun){
-  var handle = '@' + adjective + noun;
+  var handle = adjective + noun;
   return 'http://www.twitter.com/' + handle;
 }

@@ -5,16 +5,15 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http){
     var adjectives, nouns;
     $http.get('/adjectives').then(function(responseAdj){
       adjectives = responseAdj.data.adjectives;
-      //console.log(adjectives);
       $http.get('/nouns').then(function(responseNoun){
         nouns = responseNoun.data.nouns;
-        //console.log(nouns);
         $scope.twitterHandles = handleArray(adjectives, nouns);
-        //console.log($scope.twitterHandles);
       });
     });
   }
   $scope.tweet();
+  $('.tweet').hide(800);
+  $('.tweet').slideDown(800);
 }]);
 
 function handleArray(adjectives, nouns){
@@ -24,9 +23,7 @@ function handleArray(adjectives, nouns){
   var twitterHandles = [];
 
   for (var i = 0; i < minLength; i++){
-    //twitterHandles.push({shuffleAdj[i] + " " + shuffleNouns[i], buildHandle(shuffleAdj[i], shuffleNouns[i])});
     twitterHandles.push(buildHandle(shuffleAdj[i], shuffleNouns[i]));
-
   }
   return twitterHandles;
 }

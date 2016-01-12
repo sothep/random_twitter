@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="thisApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Handle Generator!</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/vendor/angular/angular.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/assets/client.min.js" type="text/javascript"></script>
+  </head>
+  <body ng-controller="mainController">
+    <h1>Behold!  Pseudo-Random Twitter Handles!</h1>
+    <div class="tweet">
+      <ul>
+        <li ng-repeat="n in twitterHandles track by $index"><a ng-href="{{n}}">{{n}}</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
